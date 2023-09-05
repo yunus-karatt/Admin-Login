@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <div class="container mt-5 pe-5">
+      <h2 class="text-center">Login</h2>
+      <form action="/login" method="post">
+        {{#if loginErr}}
+        <p class="error">Invalid username or password</p>
+        {{/if}}
+        <div class="mb-3 mt-5">
+          <label  for="exampleInputEmail1" class="form-label">Email address</label>
+          <input required name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+          <label  for="exampleInputPassword1" class="form-label">Password</label>
+          <input  required name="Password" type="password" class="form-control" id="exampleInputPassword1" >
+        </div>
+        <a href="/signup">create new account</a>
+        <div class="col-md-6 mb-3 text-md-end">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  const form = document.querySelector("form")
+form.addEventListener('click', e=>{
+  if(!form.checkValidity()){
+    
+  }
+  form.classList.add('was-validated')
+})
+</script>

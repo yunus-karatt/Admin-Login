@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <div class="container mt-5 pe-5">
+      <h2 class="text-center">update user</h2>
+      <form action="/admin/updateuser/{{user._id}}" method="post">
+        <div class="mb-3 mt-5">
+          <label for="name" class="form-label">Name</label>
+          <input value="{{user.Name}}"  name="updatename" type="text" class="form-control">
+
+        </div>
+        <div class="mb-3 mt-5">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input value="{{user.Email}}"   name="updateemail" type="email" class="form-control"  aria-describedby="emailHelp">
+
+        </div>
+       
+        <div class="col-md-6 mb-3 text-md-end">
+          <button type="submit" class="btn btn-primary">update user</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

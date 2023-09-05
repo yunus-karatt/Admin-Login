@@ -1,0 +1,35 @@
+<form action="/admin/search" method="get">
+<div class="container my-5">
+  <form class="d-flex" role="search">
+  <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</div>
+<div class="d-flex justify-content-end me-5">
+<a href="/admin/adduser/" class="btn btn-success ">Add user</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{@index}}</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each userlist}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.Name}}</td>
+      <td>{{this.Email}}</td>
+      <td><a href="/admin/deleteuser/{{this._id}}" class="btn btn-danger">Delete user</a>
+      <a href="/admin/updateuser/{{this._id}}" class="btn btn-primary">Update Details</a>
+      </td>
+    </tr>
+    {{/each}}
+
+
+  </tbody>
+</table>
